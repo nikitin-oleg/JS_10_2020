@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+
+        /**
+        * Функция возвращает случайное целое число между min  и max 
+        * @param {number} min
+        * @param {number} max
+        * @returns {number}
+        */
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+
+        let arg1 = getRandomInt(-10, 10);
+        let arg2 = getRandomInt(-10, 10);
+        console.log(arg1);
+        console.log(arg2);
+        let operation = prompt("Введите 1 для сложения, 2 - для вычитания, 3 - для умножения или \
+                4 - для деления 2-х чисел");
+
+        /**
+        * Функция возвращает сумму чисел a и b
+        * @param {number} a
+        * @param {number} b
+        * @returns {number}
+        */
+        function add(a, b) {
+            return a + b;
+        }
+
+        /**
+        * Функция возвращает разность 2-х чисел a и b
+        * @param {number} a
+        * @param {number} b
+        * @returns {number}
+        */
+        function subtract(a, b) {
+            return a - b;
+        }
+
+        /**
+        * Функция возвращает произведение 2=х чисел a и b
+        * @param {number} a
+        * @param {number} b
+        * @returns {number}
+        */
+        function multiply(a, b) {
+            return a * b;
+        }
+
+        /**
+        * Функция возвращает результат деления 2-х чисел a и b
+        * @param {number} a
+        * @param {number} b
+        * @returns {number}
+        */
+        function divide(a, b) {
+            return a / b;
+        }
+
+        /**
+        * Функция возвращает результат опреации с 2-мя числами arg1 и arg2
+        * @param {number} arg1
+        * @param {number} arg2
+        * @param {string} operation
+        * @returns {number}
+        */
+        function mathOperation(arg1, arg2, operation) {
+            switch (operation) {
+                case '1':
+                    return add(arg1, arg2);
+                    break;
+                case '2':
+                    return subtract(arg1, arg2);
+                    break;
+                case '3':
+                    return multiply(arg1, arg2);
+                    break;
+                case '4':
+                    return divide(arg1, arg2);
+                    break;
+                default:
+                    throw new Error("Не верный ввод : " + operation);
+            }
+
+        }
+        console.log(mathOperation(arg1, arg2, operation));
+
+    </script>
+</body>
+
+</html>

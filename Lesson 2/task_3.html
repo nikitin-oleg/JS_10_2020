@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+
+        /**
+        * Функция возвращает случайное целое число между min  и max 
+        * @param {number} min
+        * @param {number} max
+        * @returns {number}
+        */
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+
+        let a = getRandomInt(-10, 10);
+        let b = getRandomInt(-10, 10);
+        console.log(a);
+        console.log(b);
+
+        if (a >= 0 && b >= 0)
+            alert(a - b);
+        else if (a < 0 && b < 0)
+            alert(a * b);
+        else
+            alert(a + b);
+
+    </script>
+</body>
+
+</html>
